@@ -1,0 +1,22 @@
+{
+  "name": "aws-serverless-spa-template",
+  "version": "0.1.0",
+  "description": "A template for single-page application using AWS Lambda as service",
+  "private": true,
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "lint": "yarn workspaces run lint",
+    "fix": "yarn workspaces run fix",
+    "test": "yarn workspaces run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/elithrade/aws-serverless-spa-template.git"
+  },
+  "license": "UNLICENSED",
+  "workspaces": [
+    "lambda/service",
+    "spa",
+    "cdk"
+  ]
+}

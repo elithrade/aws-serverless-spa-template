@@ -1,0 +1,22 @@
+# Visual Studio Code
+.vscode
+
+# Vim
+*.swp
+*.*~
+
+Source/tags
+
+# NPM
+node_modules
+yarn-error.log
+
+# CDK
+cdk.out
+
+# TypeScript Builds
+dist
+lib
+
+# Tests
+__coverage__
