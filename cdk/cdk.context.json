@@ -1,0 +1,14 @@
+{
+  "hosted-zone:account=898066549381:domainName=apac-au-all-community-dev.fugro-dev.com:region=us-east-2": {
+    "Id": "/hostedzone/Z05453298YZM8I18FHGV",
+    "Name": "apac-au-all-community-dev.fugro-dev.com."
+  },
+  "hosted-zone:account=898066549381:domainName=apac-au-all-community-dev.fugro-dev.com:region=us-east-1": {
+    "Id": "/hostedzone/Z05453298YZM8I18FHGV",
+    "Name": "apac-au-all-community-dev.fugro-dev.com."
+  },
+  "hosted-zone:account=898066549381:domainName=apac-au-all-community-dev.fugro-dev.com:region=ap-southeast-2": {
+    "Id": "/hostedzone/Z05453298YZM8I18FHGV",
+    "Name": "apac-au-all-community-dev.fugro-dev.com."
+  }
+}
