@@ -5,23 +5,29 @@ import { ServiceStack } from './ServiceStack';
 import { SpaStack } from './SpaStack';
 
 const app = new App();
-const regions = ['us-east-2', 'ap-southeast-2'];
 
-const env = app.node.tryGetContext('env');
+const account = app.node.tryGetContext('account');
+if (!account) {
+  throw new Error('AWS account to deploy the stacks is undefined.');
+}
 
-regions.map(
-  (region) =>
-    new ServiceStack(app, `${app.stageName}-service-${region}`, {
-      env: {
-        ...env,
-        region,
-      },
-    })
-);
+const appName =
+  app.node.tryGetContext('appName') ?? 'aws-serverless-spa-template';
+const environment = app.node.tryGetContext('environment') ?? 'dev';
+const region = app.node.tryGetContext('region') ?? 'us-east-1';
 
-new SpaStack(app, `${app.stageName}-spa`, {
+const stackPrefix = `${appName}-${region}-${environment}`;
+
+new ServiceStack(app, `${stackPrefix}-service`, {
   env: {
-    ...env,
-    region: 'us-east-1',
+    account,
+    region,
+  },
+});
+
+new SpaStack(app, `${stackPrefix}-spa`, {
+  env: {
+    account,
+    region,
   },
 });

@@ -17,6 +17,9 @@ export class SpaStack extends core.Stack {
     const zoneName = spaContext.zoneName;
     const siteName = spaContext.siteName;
 
+    console.log('zoneName', zoneName);
+    console.log('siteName', siteName);
+
     const serviceSiteName = serviceContext.siteName;
 
     if (
@@ -38,6 +41,7 @@ export class SpaStack extends core.Stack {
     const cert = new certificate_manager.DnsValidatedCertificate(this, 'cert', {
       domainName: siteName,
       hostedZone,
+      region: 'us-east-1',
     });
 
     const bucket = new s3.Bucket(this, 'bucket');
@@ -93,7 +97,7 @@ export class SpaStack extends core.Stack {
     new s3_deployment.BucketDeployment(this, 'deploy', {
       destinationBucket: bucket,
       distribution,
-      sources: [s3_deployment.Source.asset('../../spa/dist')],
+      sources: [s3_deployment.Source.asset('../spa/dist')],
     });
 
     new core.CfnOutput(this, 'spaUrl', {

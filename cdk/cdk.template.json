@@ -1,0 +1,21 @@
+{
+  "app": "node ./lib/main.js",
+  "context": {
+    "account": "<awsAccountNumber>",
+    "region": "<awsRegion>",
+    "environment": "<deploymentEnvironment>",
+    "appName": "<appName>",
+    "spa": {
+      "zoneName": "<hostedZoneName>",
+      "siteName": "<sizeName>"
+    },
+    "service": {
+      "zoneName": "<hostedZoneName>",
+      "siteName": "<sizeName>",
+      "auth": {
+        "audience": "<autAudience>",
+        "issuer": "<jwtIssuer>"
+      }
+    }
+  }
+}

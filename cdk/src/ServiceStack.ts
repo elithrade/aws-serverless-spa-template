@@ -45,7 +45,7 @@ export class ServiceStack extends core.Stack {
     });
 
     const handler = new lambda.Function(this, 'service', {
-      code: lambda.AssetCode.fromAsset('../../lambda/service/lib'),
+      code: lambda.AssetCode.fromAsset('../lambda/service/lib'),
       runtime: lambda.Runtime.NODEJS_14_X,
       handler: 'index.handler',
     });
@@ -64,13 +64,18 @@ export class ServiceStack extends core.Stack {
       },
     });
 
-    const audience = serviceContext.audience;
-    const issuer = serviceContext.issuer;
+    const authContext = serviceContext.auth;
+    let authorizer = authContext;
 
-    const authorizer = new HttpJwtAuthorizer({
-      jwtAudience: [audience],
-      jwtIssuer: issuer,
-    });
+    if (authContext) {
+      const audience = serviceContext.audience;
+      const issuer = serviceContext.issuer;
+
+      authorizer = new HttpJwtAuthorizer({
+        jwtAudience: [audience],
+        jwtIssuer: issuer,
+      });
+    }
 
     gw.addRoutes({
       methods: [apigateway_v2.HttpMethod.GET],
