@@ -35,7 +35,7 @@ export class SpaFunction extends lambda.Function {
       ...(props ?? {}),
       runtime: lambda.Runtime.NODEJS_14_X,
       handler: 'spaHandler.handler',
-      code: lambda.AssetCode.fromAsset('../lambda/resources/src'),
+      code: lambda.AssetCode.fromAsset('../lambda/resources/lib'),
       role: props?.role ?? new EdgeRole(scope, `${id}-role`),
     });
   }
