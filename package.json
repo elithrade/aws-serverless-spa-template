@@ -15,6 +15,7 @@
   },
   "license": "UNLICENSED",
   "workspaces": [
+    "lambda/resources",
     "lambda/service",
     "spa",
     "cdk"

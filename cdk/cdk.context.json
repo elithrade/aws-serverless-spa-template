@@ -2,5 +2,9 @@
   "hosted-zone:account=911799458429:domainName=apac-au-all-rdgdm-dev.fugro-dev.com:region=ap-southeast-2": {
     "Id": "/hostedzone/Z05449403I6C988FQUVN9",
     "Name": "apac-au-all-rdgdm-dev.fugro-dev.com."
+  },
+  "hosted-zone:account=911799458429:domainName=apac-au-all-rdgdm-dev.fugro-dev.com:region=us-east-1": {
+    "Id": "/hostedzone/Z05449403I6C988FQUVN9",
+    "Name": "apac-au-all-rdgdm-dev.fugro-dev.com."
   }
 }

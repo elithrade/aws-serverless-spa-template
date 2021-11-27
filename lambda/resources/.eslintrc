@@ -1,0 +1,9 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "project": "./tsconfig.json"
+    },
+    "extends": [
+        "../../.eslintrc"
+    ]
+}
