@@ -25,7 +25,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "aws-cdk": "1.133.0",
+    "aws-cdk": "1.134.0",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard-with-typescript": "^21.0.1",
@@ -33,26 +33,26 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.0",
-    "prettier": "^2.3.1",
+    "prettier": "^2.5.0",
     "typescript": "^4.3.4"
   },
   "peerDependencies": {
     "@aws-cdk/core": "1.133.0"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "1.133.0",
-    "@aws-cdk/aws-apigatewayv2": "1.133.0",
-    "@aws-cdk/aws-apigatewayv2-authorizers": "1.133.0",
-    "@aws-cdk/aws-apigatewayv2-integrations": "1.133.0",
-    "@aws-cdk/aws-certificatemanager": "1.133.0",
-    "@aws-cdk/aws-cloudfront": "1.133.0",
-    "@aws-cdk/aws-cloudfront-origins": "1.133.0",
-    "@aws-cdk/aws-iam": "1.133.0",
-    "@aws-cdk/aws-lambda": "1.133.0",
-    "@aws-cdk/aws-route53": "1.133.0",
-    "@aws-cdk/aws-route53-targets": "1.133.0",
-    "@aws-cdk/aws-s3": "1.133.0",
-    "@aws-cdk/aws-s3-deployment": "1.133.0",
-    "@aws-cdk/core": "1.133.0"
+    "@aws-cdk/aws-apigateway": "1.134.0",
+    "@aws-cdk/aws-apigatewayv2": "1.134.0",
+    "@aws-cdk/aws-apigatewayv2-authorizers": "1.134.0",
+    "@aws-cdk/aws-apigatewayv2-integrations": "1.134.0",
+    "@aws-cdk/aws-certificatemanager": "1.134.0",
+    "@aws-cdk/aws-cloudfront": "1.134.0",
+    "@aws-cdk/aws-cloudfront-origins": "1.134.0",
+    "@aws-cdk/aws-iam": "1.134.0",
+    "@aws-cdk/aws-lambda": "1.134.0",
+    "@aws-cdk/aws-route53": "1.134.0",
+    "@aws-cdk/aws-route53-targets": "1.134.0",
+    "@aws-cdk/aws-s3": "1.134.0",
+    "@aws-cdk/aws-s3-deployment": "1.134.0",
+    "@aws-cdk/core": "1.134.0"
   }
 }
