@@ -7,6 +7,7 @@ import * as certificate_manager from '@aws-cdk/aws-certificatemanager';
 import * as route53 from '@aws-cdk/aws-route53';
 import * as route53_targets from '@aws-cdk/aws-route53-targets';
 import { SpaEdgeFunction } from './SpaEdgeFunction';
+import { StsEdgeFunction } from './StsEdgeFunction';
 
 export class SpaStack extends core.Stack {
   constructor(scope: core.Construct, id: string, props?: core.StackProps) {
@@ -57,7 +58,11 @@ export class SpaStack extends core.Stack {
 
     bucket.grantRead(originAccessIdentity);
 
+    // If the request does not look like a file
+    // change the uri for the request to `/index.html`.
     const spaFunction = new SpaEdgeFunction(this, 'spa');
+    // For each response adds headers for strict transport security.
+    const stsFunction = new StsEdgeFunction(this, 'sts');
 
     const distribution = new cloudfront.Distribution(this, 'distribution', {
       domainNames: [siteName],
@@ -68,6 +73,10 @@ export class SpaStack extends core.Stack {
           {
             functionVersion: spaFunction.currentVersion,
             eventType: cloudfront.LambdaEdgeEventType.ORIGIN_REQUEST,
+          },
+          {
+            functionVersion: stsFunction.currentVersion,
+            eventType: cloudfront.LambdaEdgeEventType.VIEWER_RESPONSE,
           },
         ],
       },

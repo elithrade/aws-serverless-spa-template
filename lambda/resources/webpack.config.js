@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
     spaHandler: './src/spaHandler.ts',
+    stsHandler: './src/stsHandler.ts',
   },
   target: 'node',
   module: {

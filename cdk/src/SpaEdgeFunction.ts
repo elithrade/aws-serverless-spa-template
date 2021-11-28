@@ -25,7 +25,7 @@ export interface SpaEdgeFunctionProps
  * routing.
  */
 export class SpaEdgeFunction extends cloudfront.experimental.EdgeFunction {
-  constructor(scope: core.Construct, id: string, props?: EdgeFunctionProps) {
+  constructor(scope: core.Construct, id: string, props?: SpaEdgeFunctionProps) {
     super(scope, id, {
       ...(props ?? {}),
       runtime: lambda.Runtime.NODEJS_14_X,
