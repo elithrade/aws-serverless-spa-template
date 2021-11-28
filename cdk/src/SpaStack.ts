@@ -6,7 +6,7 @@ import * as s3_deployment from '@aws-cdk/aws-s3-deployment';
 import * as certificate_manager from '@aws-cdk/aws-certificatemanager';
 import * as route53 from '@aws-cdk/aws-route53';
 import * as route53_targets from '@aws-cdk/aws-route53-targets';
-import { SpaFunction } from './SpaFunction';
+import { SpaEdgeFunction } from './SpaEdgeFunction';
 
 export class SpaStack extends core.Stack {
   constructor(scope: core.Construct, id: string, props?: core.StackProps) {
@@ -57,13 +57,7 @@ export class SpaStack extends core.Stack {
 
     bucket.grantRead(originAccessIdentity);
 
-    const edgeFunctionDescription = 'Edge function configuration 0.1.0';
-    const spaFunction = new SpaFunction(this, 'spa', {
-      description: edgeFunctionDescription,
-      currentVersionOptions: {
-        description: edgeFunctionDescription,
-      },
-    });
+    const spaFunction = new SpaEdgeFunction(this, 'spa');
 
     const distribution = new cloudfront.Distribution(this, 'distribution', {
       domainNames: [siteName],
