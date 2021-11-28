@@ -4,6 +4,13 @@ import * as core from '@aws-cdk/core';
 import { EdgeFunctionProps } from '@aws-cdk/aws-cloudfront/lib/experimental';
 
 /**
+ * SpaEdgeFunction properties are equivalent to EdgeFunction Properties, omitting
+ * `runtime`, `handler` and `code` which is is set by the SpaFunction directly.
+ */
+export interface SpaEdgeFunctionProps
+  extends Omit<EdgeFunctionProps, 'runtime' | 'handler' | 'code'> {}
+
+/**
  * The SpaEdgeFunction construct provides a lambda function for CloudFront
  * Distribution lambdaFunctionAssociations for origin requests. For each
  * request, if the request does not look like a file changes the uri for the
